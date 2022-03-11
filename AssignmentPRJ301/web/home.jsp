@@ -4,710 +4,432 @@
     Author     : Admin
 --%>
 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!-- Navbar -->
-<nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
-    <div class="container">
+<!DOCTYPE html>
+<html lang="en">
 
-        <!-- Brand -->
-        <a class="navbar-brand waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">
-            <strong class="blue-text">MDB</strong>
-        </a>
+    <head>
+        <title>Zay Shop eCommerce HTML CSS Template</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Collapse -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <link rel="apple-touch-icon" href="img/apple-icon.png">
+        <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
 
-        <!-- Links -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/templatemo.css">
+        <link rel="stylesheet" href="css/custom.css">
 
-            <!-- Left -->
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link waves-effect" href="#">Home
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">About MDB</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" target="_blank">Free download</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link waves-effect" href="https://mdbootstrap.com/education/bootstrap/" target="_blank">Free tutorials</a>
-                </li>
-            </ul>
+        <!-- Load fonts style after rendering the layout styles -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+        <link rel="stylesheet" href="css/fontawesome.min.css">
+        
+    </head>
 
-            <!-- Right -->
-            <ul class="navbar-nav nav-flex-icons">
-                <li class="nav-item">
-                    <a class="nav-link waves-effect">
-                        <span class="badge red z-depth-1 mr-1"> 1 </span>
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="clearfix d-none d-sm-inline-block"> Cart </span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="https://www.facebook.com/mdbootstrap" class="nav-link waves-effect" target="_blank">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="https://twitter.com/MDBootstrap" class="nav-link waves-effect" target="_blank">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="nav-link border border-light rounded waves-effect"
-                       target="_blank">
-                        <i class="fab fa-github mr-2"></i>MDB GitHub
-                    </a>
-                </li>
-            </ul>
+    <body>
+        <!-- Start Top Nav -->
+        <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
+            <div class="container text-light">
+                <div class="w-100 d-flex justify-content-between">
+                    <div>
+                        <i class="fa fa-envelope mx-2"></i>
+                        <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:info@company.com">info@company.com</a>
+                        <i class="fa fa-phone mx-2"></i>
+                        <a class="navbar-sm-brand text-light text-decoration-none" href="tel:010-020-0340">010-020-0340</a>
+                    </div>
+                    <div>
+                        <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
+                        <a class="text-light" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram fa-sm fa-fw me-2"></i></a>
+                        <a class="text-light" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter fa-sm fa-fw me-2"></i></a>
+                        <a class="text-light" href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin fa-sm fa-fw"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- Close Top Nav -->
 
-        </div>
 
-    </div>
-</nav>
-<!-- Navbar -->
+        <!-- Header -->
+        <nav class="navbar navbar-expand-lg navbar-light shadow">
+            <div class="container d-flex justify-content-between align-items-center">
 
-<!--Carousel Wrapper-->
-<div id="carousel-example-1z" class="carousel slide carousel-fade pt-4" data-ride="carousel">
+                <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">
+                    Zay
+                </a>
 
-    <!--Indicators-->
-    <ol class="carousel-indicators">
-        <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-example-1z" data-slide-to="1"></li>
-        <li data-target="#carousel-example-1z" data-slide-to="2"></li>
-    </ol>
-    <!--/.Indicators-->
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-    <!--Slides-->
-    <div class="carousel-inner" role="listbox">
-
-        <!--First slide-->
-        <div class="carousel-item active">
-            <div class="view" style="background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/8-col/img%282%29.jpg'); background-repeat: no-repeat; background-size: cover;">
-
-                <!-- Mask & flexbox options-->
-                <div class="mask rgba-black-strong d-flex justify-content-center align-items-center">
-
-                    <!-- Content -->
-                    <div class="text-center white-text mx-5 wow fadeIn">
-                        <h1 class="mb-4">
-                            <strong>Learn Bootstrap 4 with MDB</strong>
-                        </h1>
-
-                        <p>
-                            <strong>Best & free guide of responsive web design</strong>
-                        </p>
-
-                        <p class="mb-4 d-none d-md-block">
-                            <strong>The most comprehensive tutorial for the Bootstrap 4. Loved by over 500 000 users. Video and written versions
-                                available. Create your own, stunning website.</strong>
-                        </p>
-
-                        <a target="_blank" href="https://mdbootstrap.com/education/bootstrap/" class="btn btn-outline-white btn-lg">Start free tutorial
-                            <i class="fas fa-graduation-cap ml-2"></i>
+                <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
+                    <div class="flex-fill">
+                        <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about.html">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="shop.html">Shop</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact.html">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="navbar align-self-center d-flex">
+                        <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
+                                <div class="input-group-text">
+                                    <i class="fa fa-fw fa-search"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
+                            <i class="fa fa-fw fa-search text-dark mr-2"></i>
+                        </a>
+                        <a class="nav-icon position-relative text-decoration-none" href="#">
+                            <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+                            <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
+                        </a>
+                        <a class="nav-icon position-relative text-decoration-none" href="#">
+                            <i class="fa fa-fw fa-user text-dark mr-3"></i>
+                            <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">+99</span>
                         </a>
                     </div>
-                    <!-- Content -->
-
                 </div>
-                <!-- Mask & flexbox options-->
 
             </div>
-        </div>
-        <!--/First slide-->
+        </nav>
+        <!-- Close Header -->
 
-        <!--Second slide-->
-        <div class="carousel-item">
-            <div class="view" style="background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/8-col/img%283%29.jpg'); background-repeat: no-repeat; background-size: cover;">
-
-                <!-- Mask & flexbox options-->
-                <div class="mask rgba-black-strong d-flex justify-content-center align-items-center">
-
-                    <!-- Content -->
-                    <div class="text-center white-text mx-5 wow fadeIn">
-                        <h1 class="mb-4">
-                            <strong>Learn Bootstrap 4 with MDB</strong>
-                        </h1>
-
-                        <p>
-                            <strong>Best & free guide of responsive web design</strong>
-                        </p>
-
-                        <p class="mb-4 d-none d-md-block">
-                            <strong>The most comprehensive tutorial for the Bootstrap 4. Loved by over 500 000 users. Video and written versions
-                                available. Create your own, stunning website.</strong>
-                        </p>
-
-                        <a target="_blank" href="https://mdbootstrap.com/education/bootstrap/" class="btn btn-outline-white btn-lg">Start free tutorial
-                            <i class="fas fa-graduation-cap ml-2"></i>
-                        </a>
-                    </div>
-                    <!-- Content -->
-
+        <!-- Modal -->
+        <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="w-100 pt-1 mb-5 text-right">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <!-- Mask & flexbox options-->
-
-            </div>
-        </div>
-        <!--/Second slide-->
-
-        <!--Third slide-->
-        <div class="carousel-item">
-            <div class="view" style="background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/8-col/img%285%29.jpg'); background-repeat: no-repeat; background-size: cover;">
-
-                <!-- Mask & flexbox options-->
-                <div class="mask rgba-black-strong d-flex justify-content-center align-items-center">
-
-                    <!-- Content -->
-                    <div class="text-center white-text mx-5 wow fadeIn">
-                        <h1 class="mb-4">
-                            <strong>Learn Bootstrap 4 with MDB</strong>
-                        </h1>
-
-                        <p>
-                            <strong>Best & free guide of responsive web design</strong>
-                        </p>
-
-                        <p class="mb-4 d-none d-md-block">
-                            <strong>The most comprehensive tutorial for the Bootstrap 4. Loved by over 500 000 users. Video and written versions
-                                available. Create your own, stunning website.</strong>
-                        </p>
-
-                        <a target="_blank" href="https://mdbootstrap.com/education/bootstrap/" class="btn btn-outline-white btn-lg">Start free tutorial
-                            <i class="fas fa-graduation-cap ml-2"></i>
-                        </a>
-                    </div>
-                    <!-- Content -->
-
-                </div>
-                <!-- Mask & flexbox options-->
-
-            </div>
-        </div>
-        <!--/Third slide-->
-
-    </div>
-    <!--/.Slides-->
-
-    <!--Controls-->
-    <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
-    <!--/.Controls-->
-
-</div>
-<!--/.Carousel Wrapper-->
-
-<!--Main layout-->
-<main>
-    <div class="container">
-
-        <!--Navbar-->
-        <nav class="navbar navbar-expand-lg navbar-dark mdb-color lighten-3 mt-3 mb-5">
-
-            <!-- Navbar brand -->
-            <span class="navbar-brand">Categories:</span>
-
-            <!-- Collapse button -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <!-- Collapsible content -->
-            <div class="collapse navbar-collapse" id="basicExampleNav">
-
-                <!-- Links -->
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">All
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Shirts</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Sport wears</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Outwears</a>
-                    </li>
-
-                </ul>
-                <!-- Links -->
-
-                <form class="form-inline">
-                    <div class="md-form my-0">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <form action="" method="get" class="modal-content modal-body border-0 p-0">
+                    <div class="input-group mb-2">
+                        <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
+                        <button type="submit" class="input-group-text bg-success text-light">
+                            <i class="fa fa-fw fa-search text-white"></i>
+                        </button>
                     </div>
                 </form>
             </div>
-            <!-- Collapsible content -->
+        </div>
 
-        </nav>
-        <!--/.Navbar-->
 
-        <!--Section: Products v.3-->
-        <section class="text-center mb-4">
 
-            <!--Grid row-->
-            <div class="row wow fadeIn">
-
-                <!--Grid column-->
-                <div class="col-lg-3 col-md-6 mb-4">
-
-                    <!--Card-->
-                    <div class="card">
-
-                        <!--Card image-->
-                        <div class="view overlay">
-                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg" class="card-img-top" alt="">
-                            <a>
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
+        <!-- Start Banner Hero -->
+        <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="0" class="active"></li>
+                <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="1"></li>
+                <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="container">
+                        <div class="row p-5">
+                            <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                                <img class="img-fluid" src="./img/banner_banhkeo_1.jpg" alt="">
+                            </div>
+                            <div class="col-lg-6 mb-0 d-flex align-items-center">
+                                <div class="text-align-left align-self-center">
+                                    <h1 class="h1 text-success"><b>Zay</b> eCommerce</h1>
+                                    <h3 class="h2">Tiny and Perfect eCommerce Template</h3>
+                                    <p>
+                                        Zay Shop is an eCommerce HTML5 CSS template with latest version of Bootstrap 5 (beta 1). 
+                                        This template is 100% free provided by <a rel="sponsored" class="text-success" href="https://templatemo.com" target="_blank">TemplateMo</a> website. 
+                                        Image credits go to <a rel="sponsored" class="text-success" href="https://stories.freepik.com/" target="_blank">Freepik Stories</a>,
+                                        <a rel="sponsored" class="text-success" href="https://unsplash.com/" target="_blank">Unsplash</a> and
+                                        <a rel="sponsored" class="text-success" href="https://icons8.com/" target="_blank">Icons 8</a>.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <!--Card image-->
-
-                        <!--Card content-->
-                        <div class="card-body text-center">
-                            <!--Category & Title-->
-                            <a href="" class="grey-text">
-                                <h5>Shirt</h5>
-                            </a>
-                            <h5>
-                                <strong>
-                                    <a href="" class="dark-grey-text">Denim shirt
-                                        <span class="badge badge-pill danger-color">NEW</span>
-                                    </a>
-                                </strong>
-                            </h5>
-
-                            <h4 class="font-weight-bold blue-text">
-                                <strong>120$</strong>
-                            </h4>
-
-                        </div>
-                        <!--Card content-->
-
                     </div>
-                    <!--Card-->
-
                 </div>
-                <!--Grid column-->
-
-                <!--Grid column-->
-                <div class="col-lg-3 col-md-6 mb-4">
-
-                    <!--Card-->
-                    <div class="card">
-
-                        <!--Card image-->
-                        <div class="view overlay">
-                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/13.jpg" class="card-img-top" alt="">
-                            <a>
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="row p-5">
+                            <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                                <img class="img-fluid" src="./img/banner_img_02.jpg" alt="">
+                            </div>
+                            <div class="col-lg-6 mb-0 d-flex align-items-center">
+                                <div class="text-align-left">
+                                    <h1 class="h1">Proident occaecat</h1>
+                                    <h3 class="h2">Aliquip ex ea commodo consequat</h3>
+                                    <p>
+                                        You are permitted to use this Zay CSS template for your commercial websites. 
+                                        You are <strong>not permitted</strong> to re-distribute the template ZIP file in any kind of template collection websites.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <!--Card image-->
-
-                        <!--Card content-->
-                        <div class="card-body text-center">
-                            <!--Category & Title-->
-                            <a href="" class="grey-text">
-                                <h5>Sport wear</h5>
-                            </a>
-                            <h5>
-                                <strong>
-                                    <a href="" class="dark-grey-text">Sweatshirt</a>
-                                </strong>
-                            </h5>
-
-                            <h4 class="font-weight-bold blue-text">
-                                <strong>139$</strong>
-                            </h4>
-
-                        </div>
-                        <!--Card content-->
-
                     </div>
-                    <!--Card-->
-
                 </div>
-                <!--Grid column-->
-
-                <!--Grid column-->
-                <div class="col-lg-3 col-md-6 mb-4">
-
-                    <!--Card-->
-                    <div class="card">
-
-                        <!--Card image-->
-                        <div class="view overlay">
-                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/14.jpg" class="card-img-top" alt="">
-                            <a>
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="row p-5">
+                            <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                                <img class="img-fluid" src="./img/banner_img_03.jpg" alt="">
+                            </div>
+                            <div class="col-lg-6 mb-0 d-flex align-items-center">
+                                <div class="text-align-left">
+                                    <h1 class="h1">Repr in voluptate</h1>
+                                    <h3 class="h2">Ullamco laboris nisi ut </h3>
+                                    <p>
+                                        We bring you 100% free CSS templates for your websites. 
+                                        If you wish to support TemplateMo, please make a small contribution via PayPal or tell your friends about our website. Thank you.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <!--Card image-->
-
-                        <!--Card content-->
-                        <div class="card-body text-center">
-                            <!--Category & Title-->
-                            <a href="" class="grey-text">
-                                <h5>Sport wear</h5>
-                            </a>
-                            <h5>
-                                <strong>
-                                    <a href="" class="dark-grey-text">Grey blouse
-                                        <span class="badge badge-pill primary-color">bestseller</span>
-                                    </a>
-                                </strong>
-                            </h5>
-
-                            <h4 class="font-weight-bold blue-text">
-                                <strong>99$</strong>
-                            </h4>
-
-                        </div>
-                        <!--Card content-->
-
                     </div>
-                    <!--Card-->
-
                 </div>
-                <!--Grid column-->
-
-                <!--Fourth column-->
-                <div class="col-lg-3 col-md-6 mb-4">
-
-                    <!--Card-->
-                    <div class="card">
-
-                        <!--Card image-->
-                        <div class="view overlay">
-                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/15.jpg" class="card-img-top" alt="">
-                            <a>
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
-                        </div>
-                        <!--Card image-->
-
-                        <!--Card content-->
-                        <div class="card-body text-center">
-                            <!--Category & Title-->
-                            <a href="" class="grey-text">
-                                <h5>Outwear</h5>
-                            </a>
-                            <h5>
-                                <strong>
-                                    <a href="" class="dark-grey-text">Black jacket</a>
-                                </strong>
-                            </h5>
-
-                            <h4 class="font-weight-bold blue-text">
-                                <strong>219$</strong>
-                            </h4>
-
-                        </div>
-                        <!--Card content-->
-
-                    </div>
-                    <!--Card-->
-
-                </div>
-                <!--Fourth column-->
-
             </div>
-            <!--Grid row-->
+            <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="prev">
+                <i class="fas fa-chevron-left"></i>
+            </a>
+            <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="next">
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </div>
+        <!-- End Banner Hero -->
 
-            <!--Grid row-->
-            <div class="row wow fadeIn">
 
-                <!--Grid column-->
-                <div class="col-lg-3 col-md-6 mb-4">
-
-                    <!--Card-->
-                    <div class="card">
-
-                        <!--Card image-->
-                        <div class="view overlay">
-                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/13.jpg" class="card-img-top" alt="">
-                            <a>
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
-                        </div>
-                        <!--Card image-->
-
-                        <!--Card content-->
-                        <div class="card-body text-center">
-                            <!--Category & Title-->
-                            <a href="" class="grey-text">
-                                <h5>Shirt</h5>
-                            </a>
-                            <h5>
-                                <strong>
-                                    <a href="" class="dark-grey-text">Denim shirt
-                                        <span class="badge badge-pill danger-color">NEW</span>
-                                    </a>
-                                </strong>
-                            </h5>
-
-                            <h4 class="font-weight-bold blue-text">
-                                <strong>120$</strong>
-                            </h4>
-
-                        </div>
-                        <!--Card content-->
-
-                    </div>
-                    <!--Card-->
-
+        <!-- Start Categories of The Month -->
+        <section class="container py-5">
+            <div class="row text-center pt-3">
+                <div class="col-lg-6 m-auto">
+                    <h1 class="h1">Categories of The Month</h1>
+                    <p>
+                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                        deserunt mollit anim id est laborum.
+                    </p>
                 </div>
-                <!--Grid column-->
-
-                <!--Grid column-->
-                <div class="col-lg-3 col-md-6 mb-4">
-
-                    <!--Card-->
-                    <div class="card">
-
-                        <!--Card image-->
-                        <div class="view overlay">
-                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/14.jpg" class="card-img-top" alt="">
-                            <a>
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
-                        </div>
-                        <!--Card image-->
-
-                        <!--Card content-->
-                        <div class="card-body text-center">
-                            <!--Category & Title-->
-                            <a href="" class="grey-text">
-                                <h5>Sport wear</h5>
-                            </a>
-                            <h5>
-                                <strong>
-                                    <a href="" class="dark-grey-text">Sweatshirt</a>
-                                </strong>
-                            </h5>
-
-                            <h4 class="font-weight-bold blue-text">
-                                <strong>139$</strong>
-                            </h4>
-
-                        </div>
-                        <!--Card content-->
-
-                    </div>
-                    <!--Card-->
-
-                </div>
-                <!--Grid column-->
-
-                <!--Grid column-->
-                <div class="col-lg-3 col-md-6 mb-4">
-
-                    <!--Card-->
-                    <div class="card">
-
-                        <!--Card image-->
-                        <div class="view overlay">
-                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/15.jpg" class="card-img-top" alt="">
-                            <a>
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
-                        </div>
-                        <!--Card image-->
-
-                        <!--Card content-->
-                        <div class="card-body text-center">
-                            <!--Category & Title-->
-                            <a href="" class="grey-text">
-                                <h5>Sport wear</h5>
-                            </a>
-                            <h5>
-                                <strong>
-                                    <a href="" class="dark-grey-text">Grey blouse
-                                        <span class="badge badge-pill primary-color">bestseller</span>
-                                    </a>
-                                </strong>
-                            </h5>
-
-                            <h4 class="font-weight-bold blue-text">
-                                <strong>99$</strong>
-                            </h4>
-
-                        </div>
-                        <!--Card content-->
-
-                    </div>
-                    <!--Card-->
-
-                </div>
-                <!--Grid column-->
-
-                <!--Fourth column-->
-                <div class="col-lg-3 col-md-6 mb-4">
-
-                    <!--Card-->
-                    <div class="card">
-
-                        <!--Card image-->
-                        <div class="view overlay">
-                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg" class="card-img-top" alt="">
-                            <a>
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
-                        </div>
-                        <!--Card image-->
-
-                        <!--Card content-->
-                        <div class="card-body text-center">
-                            <!--Category & Title-->
-                            <a href="" class="grey-text">
-                                <h5>Outwear</h5>
-                            </a>
-                            <h5>
-                                <strong>
-                                    <a href="" class="dark-grey-text">Black jacket</a>
-                                </strong>
-                            </h5>
-
-                            <h4 class="font-weight-bold blue-text">
-                                <strong>219$</strong>
-                            </h4>
-
-                        </div>
-                        <!--Card content-->
-
-                    </div>
-                    <!--Card-->
-
-                </div>
-                <!--Fourth column-->
-
             </div>
-            <!--Grid row-->
-
+            <div class="row">
+                <div class="col-12 col-md-4 p-5 mt-3">
+                    <a href="#"><img src="./img/category_img_01.jpg" class="rounded-circle img-fluid border"></a>
+                    <h5 class="text-center mt-3 mb-3">Watches</h5>
+                    <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
+                </div>
+                <div class="col-12 col-md-4 p-5 mt-3">
+                    <a href="#"><img src="./img/category_img_02.jpg" class="rounded-circle img-fluid border"></a>
+                    <h2 class="h5 text-center mt-3 mb-3">Shoes</h2>
+                    <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
+                </div>
+                <div class="col-12 col-md-4 p-5 mt-3">
+                    <a href="#"><img src="./img/category_img_03.jpg" class="rounded-circle img-fluid border"></a>
+                    <h2 class="h5 text-center mt-3 mb-3">Accessories</h2>
+                    <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
+                </div>
+            </div>
         </section>
-        <!--Section: Products v.3-->
+        <!-- End Categories of The Month -->
 
-        <!--Pagination-->
-        <nav class="d-flex justify-content-center wow fadeIn">
-            <ul class="pagination pg-blue">
 
-                <!--Arrow left-->
-                <li class="page-item disabled">
-                    <a class="page-link" href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                </li>
+        <!-- Start Featured Product -->
+        <section class="bg-light">
+            <div class="container py-5">
+                <div class="row text-center py-3">
+                    <div class="col-lg-6 m-auto">
+                        <h1 class="h1">Featured Product</h1>
+                        <p>
+                            Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            Excepteur sint occaecat cupidatat non proident.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-4 mb-4">
+                        <div class="card h-100">
+                            <a href="shop-single.html">
+                                <img src="./img/feature_prod_01.jpg" class="card-img-top" alt="...">
+                            </a>
+                            <div class="card-body">
+                                <ul class="list-unstyled d-flex justify-content-between">
+                                    <li>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                    </li>
+                                    <li class="text-muted text-right">$240.00</li>
+                                </ul>
+                                <a href="shop-single.html" class="h2 text-decoration-none text-dark">Gym Weight</a>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt.
+                                </p>
+                                <p class="text-muted">Reviews (24)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 mb-4">
+                        <div class="card h-100">
+                            <a href="shop-single.html">
+                                <img src="./img/feature_prod_02.jpg" class="card-img-top" alt="...">
+                            </a>
+                            <div class="card-body">
+                                <ul class="list-unstyled d-flex justify-content-between">
+                                    <li>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                    </li>
+                                    <li class="text-muted text-right">$480.00</li>
+                                </ul>
+                                <a href="shop-single.html" class="h2 text-decoration-none text-dark">Cloud Nike Shoes</a>
+                                <p class="card-text">
+                                    Aenean gravida dignissim finibus. Nullam ipsum diam, posuere vitae pharetra sed, commodo ullamcorper.
+                                </p>
+                                <p class="text-muted">Reviews (48)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 mb-4">
+                        <div class="card h-100">
+                            <a href="shop-single.html">
+                                <img src="./img/feature_prod_03.jpg" class="card-img-top" alt="...">
+                            </a>
+                            <div class="card-body">
+                                <ul class="list-unstyled d-flex justify-content-between">
+                                    <li>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                    </li>
+                                    <li class="text-muted text-right">$360.00</li>
+                                </ul>
+                                <a href="shop-single.html" class="h2 text-decoration-none text-dark">Summer Addides Shoes</a>
+                                <p class="card-text">
+                                    Curabitur ac mi sit amet diam luctus porta. Phasellus pulvinar sagittis diam, et scelerisque ipsum lobortis nec.
+                                </p>
+                                <p class="text-muted">Reviews (74)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Featured Product -->
 
-                <li class="page-item active">
-                    <a class="page-link" href="#">1
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="#">2</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="#">3</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="#">4</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="#">5</a>
-                </li>
 
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <!--Pagination-->
+        <!-- Start Footer -->
+        <footer class="bg-dark" id="tempaltemo_footer">
+            <div class="container">
+                <div class="row">
 
-    </div>
-</main>
-<!--Main layout-->
+                    <div class="col-md-4 pt-5">
+                        <h2 class="h2 text-success border-bottom pb-3 border-light logo">Zay Shop</h2>
+                        <ul class="list-unstyled text-light footer-link-list">
+                            <li>
+                                <i class="fas fa-map-marker-alt fa-fw"></i>
+                                123 Consectetur at ligula 10660
+                            </li>
+                            <li>
+                                <i class="fa fa-phone fa-fw"></i>
+                                <a class="text-decoration-none" href="tel:010-020-0340">010-020-0340</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-envelope fa-fw"></i>
+                                <a class="text-decoration-none" href="mailto:info@company.com">info@company.com</a>
+                            </li>
+                        </ul>
+                    </div>
 
-<!--Footer-->
-<footer class="page-footer text-center font-small mt-4 wow fadeIn">
+                    <div class="col-md-4 pt-5">
+                        <h2 class="h2 text-light border-bottom pb-3 border-light">Products</h2>
+                        <ul class="list-unstyled text-light footer-link-list">
+                            <li><a class="text-decoration-none" href="#">Luxury</a></li>
+                            <li><a class="text-decoration-none" href="#">Sport Wear</a></li>
+                            <li><a class="text-decoration-none" href="#">Men's Shoes</a></li>
+                            <li><a class="text-decoration-none" href="#">Women's Shoes</a></li>
+                            <li><a class="text-decoration-none" href="#">Popular Dress</a></li>
+                            <li><a class="text-decoration-none" href="#">Gym Accessories</a></li>
+                            <li><a class="text-decoration-none" href="#">Sport Shoes</a></li>
+                        </ul>
+                    </div>
 
-    <!--Call to action-->
-    <div class="pt-4">
-        <a class="btn btn-outline-white" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" target="_blank" role="button">Download MDB
-            <i class="fas fa-download ml-2"></i>
-        </a>
-        <a class="btn btn-outline-white" href="https://mdbootstrap.com/education/bootstrap/" target="_blank" role="button">Start free tutorial
-            <i class="fas fa-graduation-cap ml-2"></i>
-        </a>
-    </div>
-    <!--/.Call to action-->
+                    <div class="col-md-4 pt-5">
+                        <h2 class="h2 text-light border-bottom pb-3 border-light">Further Info</h2>
+                        <ul class="list-unstyled text-light footer-link-list">
+                            <li><a class="text-decoration-none" href="#">Home</a></li>
+                            <li><a class="text-decoration-none" href="#">About Us</a></li>
+                            <li><a class="text-decoration-none" href="#">Shop Locations</a></li>
+                            <li><a class="text-decoration-none" href="#">FAQs</a></li>
+                            <li><a class="text-decoration-none" href="#">Contact</a></li>
+                        </ul>
+                    </div>
 
-    <hr class="my-4">
+                </div>
 
-    <!-- Social icons -->
-    <div class="pb-4">
-        <a href="https://www.facebook.com/mdbootstrap" target="_blank">
-            <i class="fab fa-facebook-f mr-3"></i>
-        </a>
+                <div class="row text-light mb-4">
+                    <div class="col-12 mb-3">
+                        <div class="w-100 my-3 border-top border-light"></div>
+                    </div>
+                    <div class="col-auto me-auto">
+                        <ul class="list-inline text-left footer-icons">
+                            <li class="list-inline-item border border-light rounded-circle text-center">
+                                <a class="text-light text-decoration-none" target="_blank" href="http://facebook.com/"><i class="fab fa-facebook-f fa-lg fa-fw"></i></a>
+                            </li>
+                            <li class="list-inline-item border border-light rounded-circle text-center">
+                                <a class="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/"><i class="fab fa-instagram fa-lg fa-fw"></i></a>
+                            </li>
+                            <li class="list-inline-item border border-light rounded-circle text-center">
+                                <a class="text-light text-decoration-none" target="_blank" href="https://twitter.com/"><i class="fab fa-twitter fa-lg fa-fw"></i></a>
+                            </li>
+                            <li class="list-inline-item border border-light rounded-circle text-center">
+                                <a class="text-light text-decoration-none" target="_blank" href="https://www.linkedin.com/"><i class="fab fa-linkedin fa-lg fa-fw"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-auto">
+                        <label class="sr-only" for="subscribeEmail">Email address</label>
+                        <div class="input-group mb-2">
+                            <input type="text" class="form-control bg-dark border-light" id="subscribeEmail" placeholder="Email address">
+                            <div class="input-group-text btn-success text-light">Subscribe</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        <a href="https://twitter.com/MDBootstrap" target="_blank">
-            <i class="fab fa-twitter mr-3"></i>
-        </a>
+            <div class="w-100 bg-black py-3">
+                <div class="container">
+                    <div class="row pt-2">
+                        <div class="col-12">
+                            <p class="text-left text-light">
+                                Copyright &copy; 2021 Company Name 
+                                | Designed by <a rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        <a href="https://www.youtube.com/watch?v=7MUISDJ5ZZ4" target="_blank">
-            <i class="fab fa-youtube mr-3"></i>
-        </a>
+        </footer>
+        <!-- End Footer -->
 
-        <a href="https://plus.google.com/u/0/b/107863090883699620484" target="_blank">
-            <i class="fab fa-google-plus-g mr-3"></i>
-        </a>
+        <!-- Start Script -->
+        <script src="js/jquery-1.11.0.min.js"></script>
+        <script src="js/jquery-migrate-1.2.1.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/templatemo.js"></script>
+        <script src="js/custom.js"></script>
+        <!-- End Script -->
+    </body>
 
-        <a href="https://dribbble.com/mdbootstrap" target="_blank">
-            <i class="fab fa-dribbble mr-3"></i>
-        </a>
-
-        <a href="https://pinterest.com/mdbootstrap" target="_blank">
-            <i class="fab fa-pinterest mr-3"></i>
-        </a>
-
-        <a href="https://github.com/mdbootstrap/bootstrap-material-design" target="_blank">
-            <i class="fab fa-github mr-3"></i>
-        </a>
-
-        <a href="http://codepen.io/mdbootstrap/" target="_blank">
-            <i class="fab fa-codepen mr-3"></i>
-        </a>
-    </div>
-    <!-- Social icons -->
-
-    <!--Copyright-->
-    <div class="footer-copyright py-3">
-        © 2018 Copyright:
-        <a href="https://mdbootstrap.com/education/bootstrap/" target="_blank"> MDBootstrap.com </a>
-    </div>
-    <!--/.Copyright-->
-
-</footer>
-<!--/.Footer-->
+</html>
