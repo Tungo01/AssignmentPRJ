@@ -11,6 +11,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import model.Account;
 
 /**
@@ -39,7 +40,10 @@ public class loginController extends HttpServlet {
             request.setAttribute("mess", "Wrong username or password!!!");
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }else{
-            request.getRequestDispatcher("home");
+            HttpSession session = request.getSession();
+            session.setAttribute("acc", a);
+            session.setMaxInactiveInterval(60*60);
+            request.getRequestDispatcher("home").forward(request, response);
         }
     }
 

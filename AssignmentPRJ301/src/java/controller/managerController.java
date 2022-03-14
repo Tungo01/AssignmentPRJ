@@ -12,14 +12,15 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Category;
+import javax.servlet.http.HttpSession;
+import model.Account;
 import model.Product;
 
 /**
  *
  * @author Admin
  */
-public class searchController extends HttpServlet {
+public class managerController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,18 +34,15 @@ public class searchController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        request.setCharacterEncoding("UTF-8");
-        String txtSearch = request.getParameter("txt");
+        HttpSession session = request.getSession();
+        Account a = (Account) session.getAttribute("acc");
+        int id = a.getId();
         DAO dao = new DAO();
-        List<Product> list = dao.searchByName(txtSearch);
-        List<Category> listC = dao.getAllCategory();
-        Product last = dao.getLast();
+        List<Product> list = dao.getProductBySellID(id);
         
         request.setAttribute("listP", list);
-        request.setAttribute("listCC", listC);
-        request.setAttribute("p", last);
-        request.setAttribute("txtS", txtSearch);
-        request.getRequestDispatcher("home.jsp").forward(request, response);
+        session.setMaxInactiveInterval(60*60);
+        request.getRequestDispatcher("manager.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

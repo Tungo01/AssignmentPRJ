@@ -7,19 +7,17 @@ package controller;
 
 import dao.DAO;
 import java.io.IOException;
-import java.util.List;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Category;
-import model.Product;
 
 /**
  *
  * @author Admin
  */
-public class searchController extends HttpServlet {
+public class deleteController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,18 +31,10 @@ public class searchController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        request.setCharacterEncoding("UTF-8");
-        String txtSearch = request.getParameter("txt");
+        String pid = request.getParameter("pid");
         DAO dao = new DAO();
-        List<Product> list = dao.searchByName(txtSearch);
-        List<Category> listC = dao.getAllCategory();
-        Product last = dao.getLast();
-        
-        request.setAttribute("listP", list);
-        request.setAttribute("listCC", listC);
-        request.setAttribute("p", last);
-        request.setAttribute("txtS", txtSearch);
-        request.getRequestDispatcher("home.jsp").forward(request, response);
+        dao.deleteProduct(pid);
+        response.sendRedirect("manager");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

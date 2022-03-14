@@ -24,6 +24,18 @@
         <servlet-name>signupController</servlet-name>
         <servlet-class>controller.signupController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>logoutController</servlet-name>
+        <servlet-class>controller.logoutController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>managerController</servlet-name>
+        <servlet-class>controller.managerController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>deleteController</servlet-name>
+        <servlet-class>controller.deleteController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>homeController</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -47,6 +59,18 @@
     <servlet-mapping>
         <servlet-name>signupController</servlet-name>
         <url-pattern>/signup</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>logoutController</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>managerController</servlet-name>
+        <url-pattern>/manager</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>deleteController</servlet-name>
+        <url-pattern>/delete</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

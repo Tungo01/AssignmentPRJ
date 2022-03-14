@@ -4,6 +4,7 @@
     Author     : Admin
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -65,14 +66,31 @@
                                 <a class="nav-link" href="home">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="about.html">About</a>
-                            </li>
-                            <li class="nav-item">
                                 <a class="nav-link" href="shop.html">Shop</a>
                             </li>
+                            <c:if test="${sessionScope.acc == null}">
                             <li class="nav-item">
-                                <a class="nav-link" href="contact.html">Contact</a>
+                                <a class="nav-link" href="#">About us</a>
                             </li>
+                            </c:if>
+                            <c:if test="${sessionScope.acc.isAdmin == 1}">        
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Manager Account</a>
+                            </li>
+                            </c:if>
+                            <c:if test="${sessionScope.acc.isSell == 1}">        
+                            <li class="nav-item">
+                                <a class="nav-link" href="manager">Manager Products</a>
+                            </li>                           
+                            </c:if>
+                            <c:if test="${sessionScope.acc != null}">  
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Hello <u>${sessionScope.acc.user}</u></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="logout">Logout</a>
+                            </li>
+                            </c:if>
                         </ul>
                     </div>
                     <div class="navbar align-self-center d-flex">
