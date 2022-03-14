@@ -43,13 +43,14 @@
     </head>
     <body>
         <div class="login-form">
-            <form action="/examples/actions/confirmation.php" method="post">
-                <h2 class="text-center">Log in</h2>       
+            <form action="login" method="post">
+                <h2 class="text-center">Log in</h2>                   
+                <p class="text-danger">${mess}</p>               
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Username" required="required">
+                    <input name="user" type="text" class="form-control" placeholder="Username" required="required">
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Password" required="required">
+                    <input name="pass" type="password" class="form-control" placeholder="Password" required="required">
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-block">Log in</button>
@@ -59,7 +60,7 @@
                     <a href="#" class="float-right">Forgot Password?</a>
                 </div>        
             </form>
-            <p class="text-center"><a href="#">Create an Account</a></p>
+            <p class="text-center"><a href="signup.jsp">Create an Account</a></p>
         </div>
     </body>
 </html>
