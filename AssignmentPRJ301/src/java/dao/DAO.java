@@ -25,7 +25,7 @@ public class DAO {
 
     public List<Product> getAllProduct() {
         List<Product> list = new ArrayList<>();
-        String query = "select * from product";
+        String query = "select * from [product]";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -45,7 +45,7 @@ public class DAO {
 
     public List<Category> getAllCategory() {
         List<Category> list = new ArrayList<>();
-        String query = "select * from Category";
+        String query = "select * from [Category]";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -60,7 +60,7 @@ public class DAO {
     }
 
     public Product getLast() {
-        String query = "select top 1 * from product\n"
+        String query = "select top 1 * from [product]\n"
                 + "order by id desc";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
@@ -85,6 +85,9 @@ public class DAO {
         List<Category> listC = dao.getAllCategory();
 
         for (Category o : listC) {
+            System.out.println(o);
+        }
+        for (Product o : list) {
             System.out.println(o);
         }
     }

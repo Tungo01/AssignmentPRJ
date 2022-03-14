@@ -8,10 +8,10 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
     <head>
-        <title>Cua hang banh keo</title>
+        <title>Cửa hàng bánh kẹo</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -25,7 +25,7 @@
         <!-- Load fonts style after rendering the layout styles -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
         <link rel="stylesheet" href="css/fontawesome.min.css">
-        
+
     </head>
 
     <body>
@@ -67,7 +67,7 @@
                     <div class="flex-fill">
                         <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="index.html">Home</a>
+                                <a class="nav-link" href="home.jsp">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="about.html">About</a>
@@ -142,14 +142,11 @@
                             </div>
                             <div class="col-lg-6 mb-0 d-flex align-items-center">
                                 <div class="text-align-left align-self-center">
-                                    <h1 class="h1 text-success"><b>Zay</b> eCommerce</h1>
-                                    <h3 class="h2">Tiny and Perfect eCommerce Template</h3>
+                                    <h1 class="h1 text-success"><b>Chocolate</b> </h1>
+                                    <h3 class="h2"></h3>
                                     <p>
-                                        Zay Shop is an eCommerce HTML5 CSS template with latest version of Bootstrap 5 (beta 1). 
-                                        This template is 100% free provided by <a rel="sponsored" class="text-success" href="https://templatemo.com" target="_blank">TemplateMo</a> website. 
-                                        Image credits go to <a rel="sponsored" class="text-success" href="https://stories.freepik.com/" target="_blank">Freepik Stories</a>,
-                                        <a rel="sponsored" class="text-success" href="https://unsplash.com/" target="_blank">Unsplash</a> and
-                                        <a rel="sponsored" class="text-success" href="https://icons8.com/" target="_blank">Icons 8</a>.
+
+
                                     </p>
                                 </div>
                             </div>
@@ -164,11 +161,10 @@
                             </div>
                             <div class="col-lg-6 mb-0 d-flex align-items-center">
                                 <div class="text-align-left">
-                                    <h1 class="h1">Proident occaecat</h1>
-                                    <h3 class="h2">Aliquip ex ea commodo consequat</h3>
+                                    <h1 class="h1 text-success"><b>Bánh</b></h1>
+                                    <h3 class="h2"></h3>
                                     <p>
-                                        You are permitted to use this Zay CSS template for your commercial websites. 
-                                        You are <strong>not permitted</strong> to re-distribute the template ZIP file in any kind of template collection websites.
+
                                     </p>
                                 </div>
                             </div>
@@ -183,11 +179,10 @@
                             </div>
                             <div class="col-lg-6 mb-0 d-flex align-items-center">
                                 <div class="text-align-left">
-                                    <h1 class="h1">Repr in voluptate</h1>
-                                    <h3 class="h2">Ullamco laboris nisi ut </h3>
+                                    <h1 class="h1 text-success"><b>Ngũ cốc</b></h1>
+                                    <h3 class="h2"> </h3>
                                     <p>
-                                        We bring you 100% free CSS templates for your websites. 
-                                        If you wish to support TemplateMo, please make a small contribution via PayPal or tell your friends about our website. Thank you.
+
                                     </p>
                                 </div>
                             </div>
@@ -203,128 +198,57 @@
             </a>
         </div>
         <!-- End Banner Hero -->
-
-
-        <!-- Start Categories of The Month -->
-        <section class="container py-5">
-            <div class="row text-center pt-3">
-                <div class="col-lg-6 m-auto">
-                    <h1 class="h1">Categories of The Month</h1>
-                    <p>
-                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                        deserunt mollit anim id est laborum.
-                    </p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-md-4 p-5 mt-3">
-                    <a href="#"><img src="./img/category_img_01.jpg" class="rounded-circle img-fluid border"></a>
-                    <h5 class="text-center mt-3 mb-3">Watches</h5>
-                    <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
-                </div>
-                <div class="col-12 col-md-4 p-5 mt-3">
-                    <a href="#"><img src="./img/category_img_02.jpg" class="rounded-circle img-fluid border"></a>
-                    <h2 class="h5 text-center mt-3 mb-3">Shoes</h2>
-                    <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
-                </div>
-                <div class="col-12 col-md-4 p-5 mt-3">
-                    <a href="#"><img src="./img/category_img_03.jpg" class="rounded-circle img-fluid border"></a>
-                    <h2 class="h5 text-center mt-3 mb-3">Accessories</h2>
-                    <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
-                </div>
-            </div>
-        </section>
-        <!-- End Categories of The Month -->
-
-
+     
         <!-- Start Featured Product -->
-        <section class="bg-light">
-            <div class="container py-5">
-                <div class="row text-center py-3">
-                    <div class="col-lg-6 m-auto">
-                        <h1 class="h1">Featured Product</h1>
-                        <p>
-                            Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                            Excepteur sint occaecat cupidatat non proident.
-                        </p>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="card bg-light mb-3">
+                        <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i> Categories</div>
+                        <ul class="list-group category_block">
+                            <c:forEach items="${listCC}" var="o">
+                                <li class="list-group-item text-white"><a href="#">${o.cname}</a></li>
+                                </c:forEach>
+
+                        </ul>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 col-md-4 mb-4">
-                        <div class="card h-100">
-                            <a href="shop-single.html">
-                                <img src="./img/feature_prod_01.jpg" class="card-img-top" alt="...">
-                            </a>
-                            <div class="card-body">
-                                <ul class="list-unstyled d-flex justify-content-between">
-                                    <li>
-                                        <i class="text-warning fa fa-star"></i>
-                                        <i class="text-warning fa fa-star"></i>
-                                        <i class="text-warning fa fa-star"></i>
-                                        <i class="text-muted fa fa-star"></i>
-                                        <i class="text-muted fa fa-star"></i>
-                                    </li>
-                                    <li class="text-muted text-right">$240.00</li>
-                                </ul>
-                                <a href="shop-single.html" class="h2 text-decoration-none text-dark">Gym Weight</a>
-                                <p class="card-text">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt.
-                                </p>
-                                <p class="text-muted">Reviews (24)</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-4 mb-4">
-                        <div class="card h-100">
-                            <a href="shop-single.html">
-                                <img src="./img/feature_prod_02.jpg" class="card-img-top" alt="...">
-                            </a>
-                            <div class="card-body">
-                                <ul class="list-unstyled d-flex justify-content-between">
-                                    <li>
-                                        <i class="text-warning fa fa-star"></i>
-                                        <i class="text-warning fa fa-star"></i>
-                                        <i class="text-warning fa fa-star"></i>
-                                        <i class="text-muted fa fa-star"></i>
-                                        <i class="text-muted fa fa-star"></i>
-                                    </li>
-                                    <li class="text-muted text-right">$480.00</li>
-                                </ul>
-                                <a href="shop-single.html" class="h2 text-decoration-none text-dark">Cloud Nike Shoes</a>
-                                <p class="card-text">
-                                    Aenean gravida dignissim finibus. Nullam ipsum diam, posuere vitae pharetra sed, commodo ullamcorper.
-                                </p>
-                                <p class="text-muted">Reviews (48)</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-4 mb-4">
-                        <div class="card h-100">
-                            <a href="shop-single.html">
-                                <img src="./img/feature_prod_03.jpg" class="card-img-top" alt="...">
-                            </a>
-                            <div class="card-body">
-                                <ul class="list-unstyled d-flex justify-content-between">
-                                    <li>
-                                        <i class="text-warning fa fa-star"></i>
-                                        <i class="text-warning fa fa-star"></i>
-                                        <i class="text-warning fa fa-star"></i>
-                                        <i class="text-warning fa fa-star"></i>
-                                        <i class="text-warning fa fa-star"></i>
-                                    </li>
-                                    <li class="text-muted text-right">$360.00</li>
-                                </ul>
-                                <a href="shop-single.html" class="h2 text-decoration-none text-dark">Summer Addides Shoes</a>
-                                <p class="card-text">
-                                    Curabitur ac mi sit amet diam luctus porta. Phasellus pulvinar sagittis diam, et scelerisque ipsum lobortis nec.
-                                </p>
-                                <p class="text-muted">Reviews (74)</p>
-                            </div>
+                    <div class="card bg-light mb-3">
+                        <div class="card-header bg-success text-white text-uppercase">Last product</div>
+                        <div class="card-body">
+                            <img class="img-fluid" src="${p.image}" />
+                            <h5 class="card-title">${p.name}</h5>
+                            <p class="card-text">${p.title}</p>
+                            <p class="bloc_left_price">${p.price} $</p>
                         </div>
                     </div>
                 </div>
+
+                <div class="col-sm-9">
+                    <div class="row">
+                        <c:forEach items="${listP}" var="o">
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="card">
+                                    <img class="card-img-top" src="${o.image}" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title show_txt"><a href="#" title="View Product">${o.name}</a></h4>
+                                        <p class="card-text show_txt">${o.title}</p>
+                                        <div class="row">
+                                            <div class="col">
+                                                <p class="btn btn-danger btn-block">${o.price} $</p>
+                                            </div>
+                                            <div class="col">
+                                                <a href="#" class="btn btn-success btn-block">Add to cart</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </c:forEach>
+                    </div>
+                </div>
+
             </div>
-        </section>
+        </div>
         <!-- End Featured Product -->
 
 
@@ -354,13 +278,13 @@
                     <div class="col-md-4 pt-5">
                         <h2 class="h2 text-light border-bottom pb-3 border-light">Products</h2>
                         <ul class="list-unstyled text-light footer-link-list">
-                            <li><a class="text-decoration-none" href="#">Luxury</a></li>
-                            <li><a class="text-decoration-none" href="#">Sport Wear</a></li>
-                            <li><a class="text-decoration-none" href="#">Men's Shoes</a></li>
-                            <li><a class="text-decoration-none" href="#">Women's Shoes</a></li>
-                            <li><a class="text-decoration-none" href="#">Popular Dress</a></li>
-                            <li><a class="text-decoration-none" href="#">Gym Accessories</a></li>
-                            <li><a class="text-decoration-none" href="#">Sport Shoes</a></li>
+                            <li><a class="text-decoration-none" href="#">Bánh</a></li>
+                            <li><a class="text-decoration-none" href="#">Kẹo</a></li>
+                            <li><a class="text-decoration-none" href="#">Socola</a></li>
+                            <li><a class="text-decoration-none" href="#">Bim Bim</a></li>
+                            <li><a class="text-decoration-none" href="#"></a></li>
+                            <li><a class="text-decoration-none" href="#"></a></li>
+                            <li><a class="text-decoration-none" href="#"></a></li>
                         </ul>
                     </div>
 
