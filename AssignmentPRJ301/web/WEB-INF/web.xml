@@ -48,6 +48,10 @@
         <servlet-name>editController</servlet-name>
         <servlet-class>controller.editController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>loadMoreController</servlet-name>
+        <servlet-class>controller.loadMoreController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>homeController</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -95,6 +99,10 @@
     <servlet-mapping>
         <servlet-name>editController</servlet-name>
         <url-pattern>/edit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>loadMoreController</servlet-name>
+        <url-pattern>/load</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
