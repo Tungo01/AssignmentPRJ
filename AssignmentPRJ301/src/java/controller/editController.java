@@ -7,21 +7,19 @@ package controller;
 
 import dao.DAO;
 import java.io.IOException;
-import java.util.List;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.Account;
-import model.Category;
-import model.Product;
 
 /**
  *
  * @author Admin
  */
-public class managerController extends HttpServlet {
+public class editController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,17 +33,18 @@ public class managerController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        HttpSession session = request.getSession();
-        Account a = (Account) session.getAttribute("acc");
-        int id = a.getId();
-        DAO dao = new DAO();
-        List<Product> list = dao.getProductBySellID(id);
-        List<Category> listC = dao.getAllCategory();
+        request.setCharacterEncoding("UTF-8");
+        String pid = request.getParameter("id");
+        String pname = request.getParameter("name");
+        String pimage = request.getParameter("image");
+        String pprice = request.getParameter("price");
+        String ptitle = request.getParameter("title");
+        String pdescription = request.getParameter("description");
+        String pcategory = request.getParameter("category");
         
-        request.setAttribute("listCC", listC);
-        request.setAttribute("listP", list);
-        session.setMaxInactiveInterval(60*60);
-        request.getRequestDispatcher("manager.jsp").forward(request, response);
+        DAO dao = new DAO();
+        dao.editProduct(pname, pimage, pprice, ptitle, pdescription, pcategory, pid);
+        response.sendRedirect("manager");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -25,6 +25,12 @@
         <!-- Load fonts style after rendering the layout styles -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
         <link rel="stylesheet" href="css/fontawesome.min.css">
+        <style>
+            .card-body img{
+                width: 200px;
+                height: 120px;
+            }
+        </style>
     </head>
 
     <body>
@@ -72,27 +78,27 @@
                                 <a class="nav-link" href="#">Shop</a>
                             </li>
                             <c:if test="${sessionScope.acc == null}">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">About us</a>
-                            </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">About us</a>
+                                </li>
                             </c:if>
-                            <c:if test="${sessionScope.acc.isAdmin == 1}">        
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Manager Account</a>
-                            </li>
-                            </c:if>
+                            <%--<c:if test="${sessionScope.acc.isAdmin == 1}">--%>        
+                                <!--<li class="nav-item">-->
+                                    <!--<a class="nav-link" href="#">Manager Account</a>-->
+                                <!--</li>-->
+                            <%--</c:if>--%>
                             <c:if test="${sessionScope.acc.isSell == 1}">        
-                            <li class="nav-item">
-                                <a class="nav-link" href="manager">Manager Products</a>
-                            </li>                           
+                                <li class="nav-item">
+                                    <a class="nav-link" href="manager">Manager Products</a>
+                                </li>                           
                             </c:if>
                             <c:if test="${sessionScope.acc != null}">        
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Hello <u>${sessionScope.acc.user}</u></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="logout">Logout</a>
-                            </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Hello <u>${sessionScope.acc.user}</u></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="logout">Logout</a>
+                                </li>
                             </c:if>
                         </ul>
                     </div>
@@ -106,11 +112,13 @@
                                     </button>
                                 </div>
                             </div>                           
-                        </form>                        
-                        <a class="nav-icon position-relative text-decoration-none" href="#">
-                            <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-                            <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
-                        </a>
+                        </form>
+                        <c:if test="${sessionScope.acc.isAdmin == 1}">       
+                            <a class="nav-icon position-relative text-decoration-none" href="cart.jsp">
+                                <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+                                <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
+                            </a>
+                        </c:if> 
                         <a class="nav-icon position-relative text-decoration-none" href="login.jsp">
                             <i class="fa fa-fw fa-user text-dark mr-3"></i>
                             <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
@@ -304,9 +312,9 @@
                         <h2 class="h2 text-light border-bottom pb-3 border-light">Further Info</h2>
                         <ul class="list-unstyled text-light footer-link-list">
                             <li><a class="text-decoration-none" href="home">Home</a></li>
-                            <li><a class="text-decoration-none" href="#">About Us</a></li>
-                            <li><a class="text-decoration-none" href="#">FAQs</a></li>
-                            <li><a class="text-decoration-none" href="#">Contact</a></li>
+                            <li><a class="text-decoration-none" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">About Us</a></li>
+                            <li><a class="text-decoration-none" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">FAQs</a></li>
+                            <li><a class="text-decoration-none" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Contact</a></li>
                         </ul>
                     </div>
                 </div>        

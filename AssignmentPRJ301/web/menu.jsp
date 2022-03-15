@@ -66,18 +66,18 @@
                                 <a class="nav-link" href="home">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="shop.html">Shop</a>
+                                <a class="nav-link" href="#">Shop</a>
                             </li>
                             <c:if test="${sessionScope.acc == null}">
                             <li class="nav-item">
-                                <a class="nav-link" href="#">About us</a>
+                                <a class="nav-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">About us</a>
                             </li>
                             </c:if>
-                            <c:if test="${sessionScope.acc.isAdmin == 1}">        
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Manager Account</a>
-                            </li>
-                            </c:if>
+                            <%--<c:if test="${sessionScope.acc.isAdmin == 1}">--%>        
+                            <!--<li class="nav-item">-->
+                                <!--<a class="nav-link" href="#">Manager Account</a>-->
+                            <!--</li>-->
+                            <%--</c:if>--%>
                             <c:if test="${sessionScope.acc.isSell == 1}">        
                             <li class="nav-item">
                                 <a class="nav-link" href="manager">Manager Products</a>

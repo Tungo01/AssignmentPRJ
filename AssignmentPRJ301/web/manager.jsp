@@ -158,20 +158,18 @@
                             <div class="col-sm-4">
                                 <a href="#addEmployeeModal"  class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Product</span></a>
                                 <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
-                            </div>
-                            <div class="col-sm-4">            
-                                <div class="search-box">
-                                    <i class="material-icons">&#xE8B6;</i>
-                                    <input value="${txtS}" name="txt" type="text" class="form-control" placeholder="Search&hellip;">
-                                </div>
+                            </div> 
+                            <div class="col-sm-4">
+                                <a href="home" class="btn btn-success"><span>Back to Home</span></a>
                             </div>
                         </div>
                     </div>
                     <table class="table table-striped table-hover table-bordered">
                         <thead>
                             <tr>
+                                <th>#</th>
                                 <th>ID</th>
-                                <th>Name <i class="fa fa-sort"></i></th>
+                                <th>Name</th>
                                 <th>Image</th>
                                 <th>Price</th>           
                                 <th>Actions</th>
@@ -180,6 +178,12 @@
                         <tbody>
                             <c:forEach items="${listP}" var="o">
                                 <tr>
+                                    <td>
+                                        <span class="custom-checkbox">
+                                            <input type="checkbox" id="checkbox1" name="options[]" value="1">
+                                            <label for="checkbox1"></label>
+                                        </span>
+                                    </td>
                                     <td>${o.id}</td>
                                     <td>${o.name}</td>
                                     <td>
@@ -187,7 +191,7 @@
                                     </td>
                                     <td>${o.price} VND</td>
                                     <td>
-                                        <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                                        <a href="loadProduct?pid=${o.id}" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
                                         <a href="delete?pid=${o.id}" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
                                     </td>
                                 </tr>
@@ -242,8 +246,8 @@
                             <div class="form-group">
                                 <label>Category</label>
                                 <select name="category" class="form-select" aria-label="Default select example">
-                                    <c:forEach items="${listC}" var="o">
-                                        <option value="${o.id}">${o.name}</option>
+                                    <c:forEach items="${listCC}" var="o">
+                                        <option value="${o.cid}">${o.cname}</option>
                                     </c:forEach>
                                 </select>
                             </div>

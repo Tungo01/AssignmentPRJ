@@ -12,8 +12,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import model.Account;
 import model.Category;
 import model.Product;
 
@@ -21,7 +19,7 @@ import model.Product;
  *
  * @author Admin
  */
-public class managerController extends HttpServlet {
+public class loadController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,17 +33,15 @@ public class managerController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        HttpSession session = request.getSession();
-        Account a = (Account) session.getAttribute("acc");
-        int id = a.getId();
+        request.setCharacterEncoding("UTF-8");
+        String id = request.getParameter("pid");
         DAO dao = new DAO();
-        List<Product> list = dao.getProductBySellID(id);
+        Product p = dao.getProductByID(id);
         List<Category> listC = dao.getAllCategory();
         
-        request.setAttribute("listCC", listC);
-        request.setAttribute("listP", list);
-        session.setMaxInactiveInterval(60*60);
-        request.getRequestDispatcher("manager.jsp").forward(request, response);
+        request.setAttribute("listCC", listC);       
+        request.setAttribute("detail", p);     
+        request.getRequestDispatcher("edit.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
