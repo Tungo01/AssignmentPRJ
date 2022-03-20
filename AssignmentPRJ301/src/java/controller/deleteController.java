@@ -31,10 +31,7 @@ public class deleteController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String pid = request.getParameter("pid");
-        DAO dao = new DAO();
-        dao.deleteProduct(pid);
-        response.sendRedirect("manager");
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -49,7 +46,11 @@ public class deleteController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String pid = request.getParameter("pid");
+        System.out.println(pid);
+        DAO dao = new DAO();
+        dao.deleteProduct(pid);
+        response.sendRedirect("manager");
     }
 
     /**

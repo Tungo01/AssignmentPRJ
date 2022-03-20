@@ -22,15 +22,15 @@
                             <div class="row">                                                               
                                 <div class="mb-3 col-md-12">
                                     <label>Username<span class="text-danger">*</span></label>
-                                    <input type="text" name="user" class="form-control" placeholder="Enter Username">
+                                    <input type="text" name="user" class="form-control" placeholder="Enter Username" required="required">
                                 </div>
                                 <div class="mb-3 col-md-12">
                                     <label>Password<span class="text-danger">*</span></label>
-                                    <input type="password" name="pass" class="form-control" placeholder="Enter Password">
+                                    <input type="password" name="pass" class="form-control" placeholder="Enter Password" required="required">
                                 </div>
                                 <div class="mb-3 col-md-12">
                                     <label>Confirm Password<span class="text-danger">*</span></label>
-                                    <input type="password" name="repass" class="form-control" placeholder="Confirm Password">
+                                    <input type="password" name="repass" class="form-control" placeholder="Confirm Password" required="required">
                                 </div>
                                 <p class="text-danger">${mess}</p> 
                                 <div class="col-md-12">

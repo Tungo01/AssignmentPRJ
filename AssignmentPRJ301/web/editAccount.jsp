@@ -1,6 +1,6 @@
 <%-- 
-    Document   : edit
-    Created on : Mar 15, 2022, 5:08:08 PM
+    Document   : editAccount
+    Created on : Mar 20, 2022, 11:36:51 PM
     Author     : Admin
 --%>
 
@@ -32,7 +32,7 @@
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-6">
-                            <h2>Edit <b>Product</b></h2>
+                            <h2>Edit <b>Accounts</b></h2>
                         </div>
                         <div class="col-sm-6">
                         </div>
@@ -42,43 +42,31 @@
             <div id="editEmployeeModal">
                 <div class="modal-dialog">
                     <div class="modal-content">
-                        <form action="edit" method="post">
+                        <form action="editAccount" method="post">
                             <div class="modal-header">						
-                                <h4 class="modal-title">Add Product</h4>
+                                <h4 class="modal-title">Edit Accounts</h4>
                             </div>
                             <div class="modal-body">					
                                 <div class="form-group">
-                                    <label>ID</label>
-                                    <input value="${detail.id}" name="id" type="text" class="form-control" readonly required>
+                                    <label>uID</label>
+                                    <input value="${detail.id}" name="uid" type="text" class="form-control" readonly required>
                                 </div>
                                 <div class="form-group">
-                                    <label>Name</label>
-                                    <input value="${detail.name}" name="name" type="text" class="form-control" required>
+                                    <label>Username</label>
+                                    <input value="${detail.user}" name="username" type="text" class="form-control" required>
                                 </div>
                                 <div class="form-group">
-                                    <label>Image</label>
-                                    <input value="${detail.image}" name="image" type="text" class="form-control" required>
+                                    <label>Password</label>
+                                    <input value="${detail.pass}" name="password" type="text" class="form-control" required>
                                 </div>
                                 <div class="form-group">
-                                    <label>Price</label>
-                                    <input value="${detail.price}" name="price" type="text" class="form-control" required>
+                                    <label>isSell</label>
+                                    <input value="${detail.isSell}" name="isSell" type="text" class="form-control" required>
                                 </div>
                                 <div class="form-group">
-                                    <label>Title</label>
-                                    <textarea name="title" class="form-control" required>${detail.title}</textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label>Description</label>
-                                    <textarea name="description" class="form-control" required>${detail.description}</textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label>Category</label>
-                                    <select name="category" class="form-select" aria-label="Default select example">
-                                        <c:forEach items="${listCC}" var="o">
-                                            <option value="${o.cid}">${o.cname}</option>
-                                        </c:forEach>
-                                    </select>
-                                </div>
+                                    <label>isAdmin</label>
+                                    <input value="${detail.isAdmin}" name="isAdmin" type="text" class="form-control" required>
+                                </div>                                                            
 
                             </div>
                             <div class="modal-footer">
@@ -95,3 +83,4 @@
         <script src="js/manager.js" type="text/javascript"></script>
     </body>
 </html>
+

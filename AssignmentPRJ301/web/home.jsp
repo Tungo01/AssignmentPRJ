@@ -82,11 +82,11 @@
                                     <a class="nav-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">About us</a>
                                 </li>
                             </c:if>
-                            <%--<c:if test="${sessionScope.acc.isAdmin == 1}">--%>        
-                                <!--<li class="nav-item">-->
-                                    <!--<a class="nav-link" href="#">Manager Account</a>-->
-                                <!--</li>-->
-                            <%--</c:if>--%>
+                            <c:if test="${sessionScope.acc.isAdmin == 1}">        
+                                <li class="nav-item">
+                                    <a class="nav-link" href="managerAccount">Manager Account</a>
+                                </li>
+                            </c:if>
                             <c:if test="${sessionScope.acc.isSell == 1}">        
                                 <li class="nav-item">
                                     <a class="nav-link" href="manager">Manager Products</a>
@@ -113,16 +113,17 @@
                                 </div>
                             </div>                           
                         </form>
-                        <c:if test="${sessionScope.acc.isAdmin == 1}">       
-                            <a class="nav-icon position-relative text-decoration-none" href="cart.jsp">
-                                <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-                                <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
-                            </a>
-                        </c:if> 
-                        <a class="nav-icon position-relative text-decoration-none" href="login.jsp">
-                            <i class="fa fa-fw fa-user text-dark mr-3"></i>
+
+                        <a class="nav-icon position-relative text-decoration-none" href="cart.jsp">
+                            <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
                             <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
                         </a>
+                        <c:if test="${sessionScope.acc.isSell == null || sessionScope.acc.isAdmin == null}">
+                            <a class="nav-icon position-relative text-decoration-none" href="./login">
+                                <i class="fa fa-fw fa-user text-dark mr-3"></i>
+                                <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
+                            </a>
+                        </c:if>
                     </div>
                 </div>
 
@@ -166,7 +167,7 @@
                             <div class="col-lg-6 mb-0 d-flex align-items-center">
                                 <div class="text-align-left align-self-center">
                                     <h1 class="h1 text-success"><b>Chocolate</b> </h1>
-                                    <h3 class="h2"></h3>
+                                    <h3 class="h2">Hàng nhập khẩu chất lượng cao</h3>
                                     <p>
 
 
@@ -185,7 +186,7 @@
                             <div class="col-lg-6 mb-0 d-flex align-items-center">
                                 <div class="text-align-left">
                                     <h1 class="h1 text-success"><b>Bánh</b></h1>
-                                    <h3 class="h2"></h3>
+                                    <h3 class="h2">Bánh kẹo nhập khẩu, trong nước</h3>
                                     <p>
 
                                     </p>
@@ -203,7 +204,7 @@
                             <div class="col-lg-6 mb-0 d-flex align-items-center">
                                 <div class="text-align-left">
                                     <h1 class="h1 text-success"><b>Ngũ cốc</b></h1>
-                                    <h3 class="h2"> </h3>
+                                    <h3 class="h2">Ngũ cốc ăn sáng dinh dưỡng</h3>
                                     <p>
 
                                     </p>
@@ -269,7 +270,13 @@
                         </c:forEach>
                     </div>
                 </div>
-
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <c:forEach begin="1" end="${pageNumber}" var="i">
+                            <li class="page-item"><a class="page-link" href="page?index=${i}" style="${i == index ? "Background-color: red" : ""}">${i}</a></li>
+                            </c:forEach>
+                    </ul>
+                </nav>  
             </div>
         </div>
         <!-- End Featured Product -->

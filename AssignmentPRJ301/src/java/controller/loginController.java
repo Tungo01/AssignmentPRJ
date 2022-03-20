@@ -8,6 +8,7 @@ package controller;
 import dao.DAO;
 import java.io.IOException;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -32,19 +33,7 @@ public class loginController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String username = request.getParameter("user");
-        String password = request.getParameter("pass");
-        DAO dao = new DAO();
-        Account a = dao.login(username, password);
-        if (a == null) {
-            request.setAttribute("mess", "Wrong username or password!!!");
-            request.getRequestDispatcher("login.jsp").forward(request, response);
-        }else{
-            HttpSession session = request.getSession();
-            session.setAttribute("acc", a);
-            session.setMaxInactiveInterval(60*60);
-            request.getRequestDispatcher("home").forward(request, response);
-        }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -59,7 +48,23 @@ public class loginController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        Cookie arr[] = request.getCookies();
+        if (arr != null) {
+            for (Cookie o : arr) {
+                System.out.println(o.getName());
+                System.out.println(o.getValue());
+                if (o.getName().equals("userC")) {
+                    request.setAttribute("username", o.getValue());
+                    System.out.println(o.getValue());
+                }
+                if (o.getName().equals("passC")) {
+                    request.setAttribute("password", o.getValue());
+                    System.out.println(o.getValue());
+                }
+            }
+        }
+        
+        request.getRequestDispatcher("login.jsp").forward(request, response);
     }
 
     /**
@@ -73,7 +78,32 @@ public class loginController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String username = request.getParameter("user");
+        String password = request.getParameter("pass");
+        String remember = request.getParameter("remember");
+        DAO dao = new DAO();
+        Account a = dao.login(username, password);
+        if (a == null) {
+            request.setAttribute("mess", "Wrong username or password!!!");
+            request.getRequestDispatcher("login.jsp").forward(request, response);
+        } else {
+            HttpSession session = request.getSession();
+            session.setAttribute("acc", a);
+
+            //luu account tren cookie
+            Cookie u = new Cookie("userC", username);
+            Cookie p = new Cookie("passC", password);
+            u.setMaxAge(60*60);
+            if (remember != null) {
+                p.setMaxAge(60*60);
+            } else {
+                p.setMaxAge(0);
+            }
+            response.addCookie(u);
+            response.addCookie(p);
+
+            response.sendRedirect("home");
+        }
     }
 
     /**

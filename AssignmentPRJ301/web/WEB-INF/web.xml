@@ -52,6 +52,34 @@
         <servlet-name>loadMoreController</servlet-name>
         <servlet-class>controller.loadMoreController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>managerAccountController</servlet-name>
+        <servlet-class>controller.managerAccountController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>listAccountController</servlet-name>
+        <servlet-class>controller.listAccountController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>deleteManyController</servlet-name>
+        <servlet-class>controller.deleteManyController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>deleteAccountController</servlet-name>
+        <servlet-class>controller.deleteAccountController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>deleteManyAccountController</servlet-name>
+        <servlet-class>controller.deleteManyAccountController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>loadAccountController</servlet-name>
+        <servlet-class>controller.loadAccountController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>editAccountController</servlet-name>
+        <servlet-class>controller.editAccountController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>homeController</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -103,6 +131,34 @@
     <servlet-mapping>
         <servlet-name>loadMoreController</servlet-name>
         <url-pattern>/load</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>managerAccountController</servlet-name>
+        <url-pattern>/managerAccount</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>listAccountController</servlet-name>
+        <url-pattern>/listAccount</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>deleteManyController</servlet-name>
+        <url-pattern>/deleteMany</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>deleteAccountController</servlet-name>
+        <url-pattern>/deleteAccount</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>deleteManyAccountController</servlet-name>
+        <url-pattern>/deleteManyAccount</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>loadAccountController</servlet-name>
+        <url-pattern>/loadAccount</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>editAccountController</servlet-name>
+        <url-pattern>/editAccount</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

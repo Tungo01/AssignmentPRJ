@@ -13,13 +13,14 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Account;
 import model.Product;
 
 /**
  *
  * @author Admin
  */
-public class loadMoreController extends HttpServlet {
+public class loadAccountController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,31 +34,18 @@ public class loadMoreController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-//        String amount = request.getParameter("exits");
-//        int iamount = Integer.parseInt(amount);
-//        DAO dao = new DAO();
-//        List<Product> list = dao.getNext6Product(iamount);
-//        PrintWriter out = response.getWriter();
-//
-//        for (Product o : list) {
-//            out.println("<div class=\"product col-12 col-md-6 col-lg-4\">\n"
-//                    + "                                <div class=\"card\">\n"
-//                    + "                                    <img class=\"card-img-top\" src=\""+o.getImage()+"\" alt=\"Card image cap\">\n"
-//                    + "                                    <div class=\"card-body\">\n"
-//                    + "                                        <h4 class=\"card-title show_txt\"><a href=\"detail?pid="+o.getId()+"\" title=\"View Product\">"+o.getName()+"</a></h4>\n"
-//                    + "                                        <p class=\"card-text show_txt\">"+o.getTitle()+"</p>\n"
-//                    + "                                        <div class=\"row\">\n"
-//                    + "                                            <div class=\"col\">\n"
-//                    + "                                                <p class=\"btn btn-danger btn-block\">"+o.getPrice()+" $</p>\n"
-//                    + "                                            </div>\n"
-//                    + "                                            <div class=\"col\">\n"
-//                    + "                                                <a href=\"#\" class=\"btn btn-success btn-block\">Add to cart</a>\n"
-//                    + "                                            </div>\n"
-//                    + "                                        </div>\n"
-//                    + "                                    </div>\n"
-//                    + "                                </div>\n"
-//                    + "                            </div>");
-//        }
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet loadAccountController</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet loadAccountController at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -72,7 +60,15 @@ public class loadMoreController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        request.setCharacterEncoding("UTF-8");
+        String aid = request.getParameter("aid");
+        DAO dao = new DAO();
+        Account a = dao.getAccountByuID(aid);
+        List<Account> listC = dao.getAllAccount();
+        
+        request.setAttribute("listCC", listC);       
+        request.setAttribute("detail", a);     
+        request.getRequestDispatcher("editAccount.jsp").forward(request, response);
     }
 
     /**
